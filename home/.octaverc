@@ -1,0 +1,18 @@
+% ~/.octaverc:
+%     Arquivo de configuração do octave.
+%
+%      Autor: Elder Marco <eldermarco@gmail.com>
+%       Data: Seg 05 Mar 2012 20:21:32 BRT
+% Modificado: Qua 05 Set 2012 11:55:56 BRT
+%------------------------------------------------------------------------------
+
+% Editor de textos utilizado
+edit editor '"gvim %s &"' 
+
+% O editor de textos deve abrir em segundo plano, liberando o prompt para uso.
+edit mode async;
+
+% Prompt de comando ao estilo Python.
+PS1 (">>> ");
+
+% vim: ft=matlab:tw=80:expandtab:tabstop=4:shiftwidth=4

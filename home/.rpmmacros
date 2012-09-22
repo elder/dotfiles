@@ -1,0 +1,79 @@
+#   ~/.rpmmacros:
+#       Arquivo de configuração com macros para o rpmbuild.
+#
+#      Autor: Elder Marco <eldermarco@gmail.com>
+#     Criado: Qui 07 Jun 2012 19:15:46 BRT
+# Modificado: Sáb 22 Set 2012 11:04:19 BRT
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# informações do empacotador
+#-------------------------------------------------------------------------------
+
+# Nome e contato
+%packager Elder Marco <eldermarco@gmail.com>
+
+# Chave GPG utilizada para assinar o pacote
+%_signature  gpg
+%_gpg_name   Elder Marco
+%_gpg_path   %(echo $HOME)/.gnupg
+
+
+#-------------------------------------------------------------------------------
+# diretórios com os fontes
+#-------------------------------------------------------------------------------
+
+# O diretório pai, onde residem os outros diretórios utilizados pelo rpmbuild
+# para buscar o código-fonte, construir os pacotes, armazenar os pacotes rpm
+# gerados e os pacotes rpm fontes (SRPMS).
+%_topdir %(echo $HOME)/rpmbuild
+
+# Diretório com os fontes fornecidos pelo upstream, os patches e outros arquivos
+# utilizados para gerar o pacote rpm, com exceção do arquivo .spec. É também o
+# lugar onde esses arquivos serão colocados quando o usuário instalar um rpm
+# fonte. 
+%_sourcedir %{_topdir}/SOURCES/%{name}
+
+# Diretório onde são armazenados os arquivos .spec, contendo os procedimentos
+# necessários para construir o pacote rpm a partir do código-fonte do software
+# fornecido pelo upstream. É também o lugar onde esse arquivo é colocado quando
+# o usuário instalar um rpm fonte.
+%_specdir %{_topdir}/SPECS/%{name}
+
+# Diretório utilizado pelo rpmbuild para descompactar o código-fonte, aplicar
+# os patches que forem necessários compilar o software.
+%_builddir %{_topdir}/BUILD
+
+# Diretório onde são colocados os pacotes criados pelo rpmbuild.
+%_rpmdir %{_topdir}/RPMS/%{name}
+
+# Diretório onde são colocados os srpms gerados pelo rpmbuild.
+%_srcrpmdir %{_topdir}/SRPMS/%{name}
+
+
+#-------------------------------------------------------------------------------
+# configurações default no fedora
+#-------------------------------------------------------------------------------
+
+# Compila o software levando em consideração o número de CPUs presente na
+# máquina. Em geral, isso reduz muito o tempo de compilação em máquinas com
+# vários processadores, já que permite que o make execute vários comandos
+# simultaneamente.
+%_smp_mflags %(\
+    [ -z "$RPM_BUILD_NCPUS" ] \\\
+        && RPM_BUILD_NCPUS="`/usr/bin/getconf _NPROCESSORS_ONLN`"; \\\
+    if [ "$RPM_BUILD_NCPUS" -gt 16 ]; then \\\
+        echo "-j16"; \\\
+    elif [ "$RPM_BUILD_NCPUS" -gt 3 ]; then \\\
+        echo "-j$RPM_BUILD_NCPUS"; \\\
+    else \\\
+        echo "-j3"; \\\
+    fi )
+
+
+%__arch_install_post \
+    [ "%{buildarch}" = "noarch" ] || QA_CHECK_RPATHS=1 ; \
+    case "${QA_CHECK_RPATHS:-}" in [1yY]*) /usr/lib/rpm/check-rpaths ;; esac \
+    /usr/lib/rpm/check-buildroot
+
+# vim: tw=80:expandtab:tabstop=4:shiftwidth=4

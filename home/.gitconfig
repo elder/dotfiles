@@ -1,0 +1,8 @@
+[user]
+	name   = Elder Marco
+	email  = eldermarco@gmail.com
+
+[color]
+	ui     = always
+	diff   = always
+	commit = always
