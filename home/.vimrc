@@ -109,6 +109,10 @@ let NERDTreeIgnore = ['\.pyc', '\.pyo']
 let NERDTreeChristmasTree = 1
 
 
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Mapeamentos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
