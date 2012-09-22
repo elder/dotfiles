@@ -1,3 +1,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = git://github.com/vim-scripts/UltiSnips.git
+[submodule "home/.vim/bundle/supertab"]
+	path = home/.vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git

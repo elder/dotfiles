@@ -100,6 +100,10 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 let g:UltiSnipsEditSplit = 'horizontal'
 
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Mapeamentos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
