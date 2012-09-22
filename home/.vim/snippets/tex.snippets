@@ -1,0 +1,17 @@
+#  ~/.vim/snippets/tex.snippets:
+#		Trechos personalizados de código para serem utilizados em arquivos .tex
+#
+#      Autor: Elder Marco <eldermarco@gmail.com>
+#       Data: Sáb 08 Set 2012 11:17:52 BRT
+# Modificado: Sáb 08 Set 2012 18:38:20 BRT
+#-------------------------------------------------------------------------------
+
+snippet "fig(ure)?" "Inserir figuras através do ambiente figure" br
+\begin{figure}[htb]
+	\centering
+	\includegraphics[${1:width=\textwidth}]{${2:imagem}}
+	\caption{${3:legenda}}
+\end{figure}
+
+${0}
+endsnippet

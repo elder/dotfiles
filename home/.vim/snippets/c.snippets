@@ -1,0 +1,29 @@
+#  ~/.vim/snippets/c.snippets:
+#		Trechos personalizados de código para serem utilizados em arquivos .c
+#
+#      Autor: Elder Marco <eldermarco@gmail.com>
+#       Data: Seg 17 Set 2012 12:23:40 BRT
+# Modificado: Sáb 22 Set 2012 11:45:41 BRT
+#-------------------------------------------------------------------------------
+
+snippet gpl "Cabeçalho com a licença GPLv3+" !b
+/*
+ * This file is part of ${1:package}.
+ *
+ * Copyright (C) `!v strftime ("%Y")` - Elder Marco <eldermarco@gmail.com>
+ *
+ * $1 is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * $1 is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with $1. If not, see <http://www.gnu.org/licenses/>.
+ */
+${0}
+endsnippet
