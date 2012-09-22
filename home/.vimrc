@@ -103,6 +103,11 @@ let g:UltiSnipsEditSplit = 'horizontal'
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 
+" NERDTree
+map <c-t> :NERDTreeToggle <cr>
+let NERDTreeIgnore = ['\.pyc', '\.pyo']
+let NERDTreeChristmasTree = 1
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Mapeamentos
