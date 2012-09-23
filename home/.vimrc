@@ -3,7 +3,7 @@
 "       Autor: Elder Marco <eldermarco@gmail.com>
 "
 "      Criado: Qui 24 Jun 2010 14:26:34 BRT
-"  Modificado: Sáb 22 Set 2012 11:27:34 BRT
+"  Modificado: Dom 23 Set 2012 11:29:08 BRT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -11,7 +11,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:__autor__      = 'Elder Marco'          " dono da bagaça
-let g:__email__      = 'eldermarco@gmail.com' " e-mail do donp
+let g:__email__      = 'eldermarco@gmail.com' " e-mail do dono
 let g:__headerlen__  = 15                     " tamanho do cabeçalho (em linhas)
 
 
