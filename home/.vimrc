@@ -3,7 +3,7 @@
 "       Autor: Elder Marco <eldermarco@gmail.com>
 "
 "      Criado: Qui 24 Jun 2010 14:26:34 BRT
-"  Modificado: Dom 23 Set 2012 11:29:08 BRT
+"  Modificado: Dom 23 Set 2012 11:34:05 BRT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,6 +102,7 @@ let g:UltiSnipsEditSplit = 'horizontal'
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
+
 
 " NERDTree
 map <c-t> :NERDTreeToggle <cr>
