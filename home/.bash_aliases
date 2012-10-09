@@ -3,12 +3,13 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Sáb 22 Set 2012 10:39:42 BRT
+# Modificado: Seg 08 Out 2012 21:00:00 BRT
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias mkdir='mkdir -p'
 
 alias l='ls -CF'
 alias l.='ls -d .*'
