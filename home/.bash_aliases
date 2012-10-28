@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Seg 08 Out 2012 21:00:00 BRT
+# Modificado: Dom 28 Out 2012 14:53:16 BRST
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
@@ -14,6 +14,7 @@ alias mkdir='mkdir -p'
 alias l='ls -CF'
 alias l.='ls -d .*'
 alias ll='ls -l'
+alias lr='ls -R'
 alias la='ls -A'
 alias lla='ls -lA'
 alias ls='ls --color=auto'
