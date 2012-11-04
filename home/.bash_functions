@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sáb 22 Set 2012 10:48:16 BRT
+# Modificado: Dom 04 Nov 2012 10:38:39 BRST
 #-------------------------------------------------------------------------------
 
 
@@ -101,9 +101,9 @@ function yt ()
     fi
 
     # Extrai o ID do video para ser utizado em um URL padronizado.
-    if echo "$URL" | egrep -iq "^http://youtu.be"; then
+    if echo "$URL" | egrep -iq "^https?://youtu.be"; then
         ID=$(echo "$URL" | egrep -o '[^/]+$')
-    elif echo "$URL" | egrep -iq '^http://(www\.)?youtube.com'; then
+    elif echo "$URL" | egrep -iq '^https?://(www\.)?youtube.com'; then
         ID=$(echo "$URL" | sed -r 's/.*v=([^&]+).*/\1/g')
     else
         echo 1>&2 "yt: "$URL" não parece ser uma URL do YouTube."
