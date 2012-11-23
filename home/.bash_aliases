@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Dom 28 Out 2012 14:53:16 BRST
+# Modificado: Sex 23 Nov 2012 16:29:23 BRST
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
@@ -25,7 +25,17 @@ alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 
 alias vi='vim'
-alias x='atool -x'
 alias genpasswd='gpg --gen-random --armor 1'
+
+# Aliases para a compactação e descomptação de arquivos em diversos formatos.
+# Para fazer a compactação, deve-se passar primeiramente o arquivo compactado
+# que deve ser salvo e então os arquivos que irão fazer parte dele.
+alias x='atool -x'
+alias mkzip='atool --add --format .zip'
+alias mkrar='atool --add --format .rar'
+alias mktargz='atool --add --format .tar.gz'
+alias mktarxz='atool --add --format .tar.xz'
+alias mktarbz2='atool --add --format .tar.bz2'
+
 
 # vim: ft=sh:expandtab:tabstop=4:shiftwidth=4
