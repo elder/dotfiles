@@ -6,3 +6,6 @@
 	ui     = always
 	diff   = always
 	commit = always
+
+[core]
+	editor = vim
