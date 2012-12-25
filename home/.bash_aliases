@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Sex 23 Nov 2012 16:29:23 BRST
+# Modificado: Ter 25 Dez 2012 14:27:42 BRST
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
@@ -23,6 +23,7 @@ alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
+alias -- -='cd -'
 
 alias vi='vim'
 alias genpasswd='gpg --gen-random --armor 1'
