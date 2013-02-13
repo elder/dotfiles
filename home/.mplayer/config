@@ -3,10 +3,11 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Dom 02 Set 2012 13:32:34 BRT
-# Modificado: Qua 05 Set 2012 11:28:33 BRT
+# Modificado: Qua 13 Fev 2013 18:12:29 BRST
 #-------------------------------------------------------------------------------
 
 zoom=yes
 msgcolor=yes
+use-filename-title=yes
 
 # vim: tw=80:expandtab:tabstop=4:shiftwidth=4
