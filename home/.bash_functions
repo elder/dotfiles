@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sáb 16 Fev 2013 16:10:04 BRST
+# Modificado: Sáb 16 Fev 2013 16:23:50 BRST
 #-------------------------------------------------------------------------------
 
 
@@ -19,6 +19,9 @@ function gi ()
 
     if [ $# -ne 1 ]; then
         echo 2>&1 "Uso: $FUNCNAME [SO,][IDE,][linguagem de programação]"
+        echo 2>&1
+        echo 2>&1 "Utilize a opção list para listar as IDES, linguagens de "
+        echo 2>&1 "programação ou sistemas operacionais disponíveis:"
         return 1
     fi
 
