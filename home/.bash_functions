@@ -3,12 +3,28 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Dom 04 Nov 2012 10:38:39 BRST
+# Modificado: Sáb 16 Fev 2013 16:10:04 BRST
 #-------------------------------------------------------------------------------
 
 
 # Cria o diretório especificado pelo primeiro argumento e entra nele.
 function mkcd () { mkdir -p "$1" && cd "$1"; }
+
+
+# Gera aarquivos .gitignore bem úteis para os mais diferentes ambientes,
+# IDES, linguagens de programação, etc.
+function gi ()
+{
+    local API='http://gitignore.io/api'
+
+    if [ $# -ne 1 ]; then
+        echo 2>&1 "Uso: $FUNCNAME [SO,][IDE,][linguagem de programação]"
+        return 1
+    fi
+
+    curl $API/$@
+    return $?
+}
 
 
 # Faz o cálculo de uma expressão matemática utilizando o bc. É possível definir
