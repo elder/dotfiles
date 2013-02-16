@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sáb 16 Fev 2013 16:23:50 BRST
+# Modificado: Sáb 16 Fev 2013 16:26:50 BRST
 #-------------------------------------------------------------------------------
 
 
@@ -11,7 +11,7 @@
 function mkcd () { mkdir -p "$1" && cd "$1"; }
 
 
-# Gera aarquivos .gitignore bem úteis para os mais diferentes ambientes,
+# Gera arquivos .gitignore bem úteis para os mais diferentes ambientes,
 # IDES, linguagens de programação, etc.
 function gi ()
 {
