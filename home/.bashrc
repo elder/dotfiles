@@ -3,7 +3,7 @@
 #
 #       Autor: Elder Marco <eldermarco@gmail.com>
 #      Criado: Tue 10 Apr 2007 17:15:36 BRT
-#  Modificado: Sáb 22 Set 2012 10:52:28 BRT
+#  Modificado: Sáb 23 Fev 2013 12:26:18 BRT
 #-------------------------------------------------------------------------------
 
 test -f /etc/bashrc    && \
@@ -79,7 +79,13 @@ fbranco='\e[47m'        # branco
 #------------------------------------------------------------------------------
 # configurações gerais
 #------------------------------------------------------------------------------
-test ! -f /etc/bash_completion.d/git -a ! -d /usr/share/bash-completion && \
+
+# Permite utilizar os recursos do bash-completion para exibir o branch atual
+# e o status do repositório.
+test -f /usr/share/git-core/contrib/completion/git-prompt.sh && \
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+
+test ! -f /usr/share/git-core/contrib/completion/git-prompt.sh && \
     export PS1="[\[$namarelo\]\u@\h\[$normal\]: \W ]\\$ " || \
     export PS1="[\[$namarelo\]\u@\h\[$normal\]: \W\$(__git_ps1 \" (%s)\") ]\\$ "
 
