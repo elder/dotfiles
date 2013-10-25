@@ -30,6 +30,22 @@ function gi ()
 }
 
 
+# Descompacta arquivos. A compactação pode ser em qualquer formato suportado
+# pelo programa atool e objetivo dessa função é poder passar vários arquivos
+# de uma única vez para que sejam descompactados.
+function x ()
+{
+    if [ $# -lt 1 ]; then
+        echo 2>&1 "Uso: $FUNCNAME ARQ2 [ARQ2] [ARQ3] ..."
+        return 1
+    fi
+
+    for file in "$@"; do
+        atool -x "$file"
+    done
+}
+
+
 # Faz o cálculo de uma expressão matemática utilizando o bc. É possível definir
 # a precisão (número de casas decimais) utilizada na saída. Por default, se
 # utiliza 2 casas decimais depois da vírgula. Esta função foi baseada em um

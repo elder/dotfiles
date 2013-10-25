@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Ter 25 Dez 2012 14:27:42 BRST
+# Modificado: Sex 25 Out 2013 21:11:00 BRST
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
@@ -31,7 +31,6 @@ alias genpasswd='gpg --gen-random --armor 1'
 # Aliases para a compactação e descomptação de arquivos em diversos formatos.
 # Para fazer a compactação, deve-se passar primeiramente o arquivo compactado
 # que deve ser salvo e então os arquivos que irão fazer parte dele.
-alias x='atool -x'
 alias mkzip='atool --add --format .zip'
 alias mkrar='atool --add --format .rar'
 alias mktargz='atool --add --format .tar.gz'
