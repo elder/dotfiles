@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sáb 16 Fev 2013 16:26:50 BRST
+# Modificado: Sáb 03 Mai 2014 20:36:09 BRT
 #-------------------------------------------------------------------------------
 
 
@@ -66,6 +66,15 @@ function calc ()
     fi
 
     echo "scale=$PRECISION; $@" | bc -l
+}
+
+
+# Calcula o percentual de lucro em um dado período, dados os valores de
+# patrimônio entre duas datas diferentes. Os valores devem ser colocados em
+# ordem crescente de data.
+function perc ()
+{
+    echo "$(calc -p 2 "($2 - $1)*100/$1")%"
 }
 
 
