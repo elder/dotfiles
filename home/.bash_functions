@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sáb 03 Mai 2014 20:36:09 BRT
+# Modificado: Sex 22 Ago 2014 19:12:17 BRT
 #-------------------------------------------------------------------------------
 
 
@@ -69,12 +69,27 @@ function calc ()
 }
 
 
-# Calcula o percentual de lucro em um dado período, dados os valores de
-# patrimônio entre duas datas diferentes. Os valores devem ser colocados em
-# ordem crescente de data.
+# Calcula a variação percentual entre um valor dado e o seguinte. O valor
+# anterior é sempre utilizado como valor de referência. Pode-se especificar
+# quantos valores forem necessários, mas deve-se ser um número maior do que
+# 2.
 function perc ()
 {
-    echo "$(calc -p 2 "($2 - $1)*100/$1")%"
+    local VALORES=($@)
+    local REF ATUAL PERC
+
+    if [ $# -lt 2 ]; then
+        echo 1>&2 "Uso: $FUNCNAME VALOR1 VALOR2 [VALOR3] [VALOR4] ..."
+        return 1
+    fi
+
+    for i in $(seq 0 1 $(( ${#VALORES[@]} - 2))); do
+        REF=${VALORES[$i]}
+        ATUAL=${VALORES[$((i + 1))]}
+        PERC=$(calc -p 6 "100*($ATUAL - $REF)/$REF")
+
+        printf "%20s: %7.2f\n" "$REF -> $ATUAL" $PERC
+    done
 }
 
 
