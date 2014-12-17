@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Sáb 01 Set 2012 16:05:11 BRT
-# Modificado: Sáb 22 Set 2012 10:51:16 BRT
+# Modificado: Qua 17 Dez 2014 18:00:19 BRST
 #-------------------------------------------------------------------------------
 
 test -e  "$HOME/.bashrc" && source "$HOME/.bashrc"
@@ -14,7 +14,6 @@ test -e  "$HOME/.bashrc" && source "$HOME/.bashrc"
 #-------------------------------------------------------------------------------
 export EDITOR='vim'
 export MANPAGER='most -s'
-export GREP_OPTIONS='--color=auto'
 export PATH=$PATH:$HOME/bin
 export CDPATH=$CDPATH:$HOME:$HOME/Vídeos:$HOME/Músicas
 test -e /usr/share/terminfo/r/rxvt-256color && \
