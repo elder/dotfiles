@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Sex 22 Ago 2014 19:12:17 BRT
+# Modificado: Ter 17 Fev 2015 14:11:15 BRST
 #-------------------------------------------------------------------------------
 
 
@@ -44,6 +44,12 @@ function x ()
         atool -x "$file"
     done
 }
+
+
+# Salva o último episódio assistido em um arquivo chamado last, no diretório
+# atual. Útil como lembrete, visto que é bastante comum esquecer. Argumento
+# em linha comando: O último episódio assistido. Exemplo: S04E05
+function last-episode () { echo "Último: $1 ($(date +%d/%m/%Y))" > last; }
 
 
 # Faz o cálculo de uma expressão matemática utilizando o bc. É possível definir
