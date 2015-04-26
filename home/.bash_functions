@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Ter 17 Fev 2015 14:11:15 BRST
+# Modificado: Dom 26 Abr 2015 17:14:22 BRT
 #-------------------------------------------------------------------------------
 
 
@@ -94,7 +94,7 @@ function perc ()
         ATUAL=${VALORES[$((i + 1))]}
         PERC=$(calc -p 6 "100*($ATUAL - $REF)/$REF")
 
-        printf "%20s: %7.2f\n" "$REF -> $ATUAL" $PERC
+        LC_NUMERIC=en_US printf "%20s: %7.2f\n" "$REF -> $ATUAL" $PERC
     done
 }
 
