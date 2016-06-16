@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Ter 19 Jun 2012 10:00:44 BRT
-# Modificado: Qua 17 Dez 2014 18:00:58 BRST
+# Modificado: Qua 15 Jun 2016 21:14:43 BRT
 #-------------------------------------------------------------------------------
 
 alias rm='rm -i'
@@ -27,7 +27,6 @@ alias ..4='cd ../../../..'
 alias -- -='cd -'
 
 alias vi='vim'
-alias genpasswd='gpg --gen-random --armor 1'
 
 # Aliases para a compactação e descomptação de arquivos em diversos formatos.
 # Para fazer a compactação, deve-se passar primeiramente o arquivo compactado
