@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Qua 15 Jun 2016 21:14:29 BRT
+# Modificado: Qua 15 Jun 2016 21:25:11 BRT
 #-------------------------------------------------------------------------------
 
 
@@ -11,11 +11,8 @@
 function mkcd () { mkdir -p "$1" && cd "$1"; }
 
 
-# Gera uma senha aleatória com um número especificado de de caracteres
-function genpasswd ()
-{
-    gpg --gen-random --armor 1 $1 | cut -c1-$1
-}
+# Gera uma senha aleatória com um número especificado de caracteres
+function genpasswd () { gpg --gen-random --armor 1 $1 | cut -c1-$1; }
 
 
 # Gera arquivos .gitignore bem úteis para os mais diferentes ambientes,
