@@ -3,7 +3,7 @@
 #
 #      Autor: Elder Marco <eldermarco@gmail.com>
 #       Data: Seg 03 Set 2012 22:29:43 BRT
-# Modificado: Qua 15 Jun 2016 21:25:11 BRT
+# Modificado: Tue 13 Mar 2018 19:31:23 BRT
 #-------------------------------------------------------------------------------
 
 
@@ -56,26 +56,51 @@ function x ()
 function last-episode () { echo "Último: $1 ($(date +%d/%m/%Y))" > last; }
 
 
-# Faz o cálculo de uma expressão matemática utilizando o bc. É possível definir
-# a precisão (número de casas decimais) utilizada na saída. Por default, se
-# utiliza 2 casas decimais depois da vírgula. Esta função foi baseada em um
-# script postado na lista shell-script no Yahoo!. Trata-se de uma calculadora
-# simples e bastante útil para o terminal do Linux.
-function calc () 
+# Faz o cálculo de uma expressão matemática. A precisão é de duas casas decimais
+# por default. A opção -p/--precision permite alterar isso, caso necessário.
+# Este é um comando simples e bastante útil para o terminal linux.
+function calc ()
 {
+    local OPTIONS
+    local -r SHORT_OPTIONS="p:h"
+    local -r LONG_OPTIONS="precision:,help"
     local PRECISION=2
 
-    if [ $# -lt 1 ]; then
-        echo 1>&2 "Uso: $FUNCNAME [-p|--precision NUM] EXPRESSÃO"
-        return 1
-    fi
+    calc_usage () { echo 1>&2 "Uso: $1 [-p|--precision PRECISAO] EXPRESSÃO"; }
 
-    if [ "$1" = "-p" -o "$1" == "--precision" ]; then
-        PRECISION=$2
-        shift 2
-    fi
+    # Nenhum parâmetro foi passado, não há o que fazer
+    test $# -eq 0 && { calc_usage "$FUNCNAME"; return 1; }
 
-    echo "scale=$PRECISION; $@" | bc -l
+    OPTIONS=$(getopt --name "$FUNCNAME"         \
+                     --options "$SHORT_OPTIONS" \
+                     --longoptions "$LONG_OPTIONS" -- "$@")
+    test $? -ne 0 && return 1
+
+    eval set -- "$OPTIONS"
+    while true; do
+        case "$1" in
+            -p|--precision)
+                PRECISION=$2
+                shift 2
+                ;;
+            -h|--help)
+                calc_usage "$FUNCNAME"
+                return 0
+                ;;
+           --)
+                shift
+                break
+                ;;
+            *)
+                break
+                ;;
+        esac
+    done
+    test $# -eq 0 && { calc_usage "$FUNCNAME"; return 1; }
+
+    # Efetua o cálculo e imprime na tela
+    awk -v precision=$PRECISION \
+     'BEGIN { result = '"$*"'; printf "%." precision "f\n", result; exit }'
 }
 
 
