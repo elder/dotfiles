@@ -3,7 +3,7 @@
 "       Autor: Elder Marco <eldermarco@gmail.com>
 "
 "      Criado: Qui 24 Jun 2010 14:26:34 BRT
-"  Modificado: Dom 23 Set 2012 11:34:05 BRT
+"  Modificado: sex 11 out 2019 21:54:41 -03
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -205,10 +205,15 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has ("autocmd")
-    " Ignora os autocomandos do grupo fedora, presente no arquivo /etc/vimrc
-    " na distribuição Linux Fedora. Além disso, os autocomandos úteis deste
-    " grupo estão presentes abaixo.
-    augroup! fedora
+    " Apaga o autogrupo fedora, presente no arquivo /etc/vimrc da distribuição
+    " Linux Fedora. Os autocomandos úteis deste grupo foram transferidos para
+    " o autogrupo definido mais abaixo.
+    if exists ('#fedora')
+        augroup fedora
+            autocmd!
+        augroup end
+        augroup! fedora
+    endif
 
     augroup modelos 
         autocmd!
