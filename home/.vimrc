@@ -3,7 +3,7 @@
 "       Autor: Elder Marco <eldermarco@gmail.com>
 "
 "      Criado: Qui 24 Jun 2010 14:26:34 BRT
-"  Modificado: sex 11 out 2019 21:54:41 -03
+"  Modificado: sex 11 out 2019 23:08:09 -03
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -132,7 +132,7 @@ nnoremap <c-right> :tabnext<cr>
 
 
 " Permite abrir/fechar uma dobra com a tecla espaço.
-nnoremap silent! <space> @=((foldclosed(line(".")) < 0 ) ? 'zc' : 'zo')<cr>
+nnoremap <silent> <space> @=(foldlevel ('.') ? 'za' : "\<space>")<cr>
 
 
 " No modo normal, permite subir ou descer a linha atual em um dado arquivo
